@@ -31,18 +31,34 @@ server.listen()
 print("Server listening...")
 
 
-client, addr = server.accept()
-print("Client:", addr)
+
+
+
+# start networking thread
+# threading.Thread(target=server_thread, daemon=True).start()
+
+# client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# client.connect((SERVER_IP, PORT))
 
 cap = cv2.VideoCapture(0)
+
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+
+width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+print(width, height)
+
+client, addr = server.accept()
+print("Client:", addr)
 
 while True:
     ret, frame = cap.read()
     if not ret:
         break
 
-    _, encoded = cv2.imencode(".jpg", frame)
-    data = encoded.tobytes()
+    data = frame.tobytes()
 
     client.sendall(struct.pack("!I", len(data)))
     client.sendall(data)
@@ -63,6 +79,7 @@ while True:
     else:
         print("Detections:", data)
 
+   
     
 
 client.close()
