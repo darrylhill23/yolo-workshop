@@ -96,5 +96,5 @@ Once that is complete, run `python3 label.py` to label the remaining data.
 
 13. Test it out. It should be working better. 
 
-python3 `cam-test-model.py`
+`python3 cam-test-model.py`
 
