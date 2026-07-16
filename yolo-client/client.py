@@ -22,8 +22,8 @@ SERVER_IP = "127.0.0.1"
 PORT = 5001
 
 # robot camera resolution
-# HEIGHT = 240
-# WIDTH = 320
+#HEIGHT = 240
+#WIDTH = 320
 
 # localhost camera resolution
 HEIGHT = 480
