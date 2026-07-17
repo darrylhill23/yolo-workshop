@@ -57,13 +57,13 @@ Press escape when done. Aim for about 40 seconds to a minute.
 
 2. Chop it into frames.
 
-Run `python3 extract-frames.py`. This will extract frames at 1 second intervals and put them into a candidates folder.
+Run `python3 extract-frames.py`. This will extract frames at 1 second intervals and put them into a **candidates** folder.
 
 3. Label this training data. Run
 
 `python3 label.py`
 
-If the particular frame does not contain the object you are tracking, hit 'n'. Otherwise, draw a bounding box around your object.
+If the particular frame does not contain the object you are tracking, hit 'n'. Otherwise, draw a bounding box around your object (click and drag your mouse) and hit enter. This will create a **dataset** folder with some sub-folders.
 
 4. Split into training data and validation data.
 
@@ -87,7 +87,7 @@ On a cpu, this can take a while. A gpu should be quite fast.
 
 `python3 label-with-inference.py`
 
-If the frame is properly labeled, hit enter. If not, hit 'n'. This will leave the improperly labeled data in candiates. 
+It will display the frames with the models guess of where the bounding box should go. If the frame is properly labeled, hit enter. If not, hit 'n'. The frames for which you select 'n' will be left for you to manually label. 
 
 Once that is complete, run `python3 label.py` to label the remaining data. 
 
