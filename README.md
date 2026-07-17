@@ -7,6 +7,7 @@ Short description of what this project does.
 ### 1. Clone the repository
 
 git clone https://github.com/darrylhill23/yolo-workshop
+
 cd yolo-workshop
 
 ### 2. Make a Python virtual environment
