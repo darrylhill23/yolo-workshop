@@ -24,23 +24,27 @@ Navigate to the yolo-workshop folder.
 
 #### On Windows Terminal:
 
-`python -m venv venv
+`python -m venv venv`
 
-venv\Scripts\activate
+`venv\Scripts\activate`
 
-pip install -r requirements.txt`
+`pip install -r requirements.txt`
 
 #### On Linux:
 
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+`python3 -m venv venv`
+
+`source venv/bin/activate`
+
+`pip install -r requirements.txt`
 
 #### On Mac
 
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+`python3 -m venv venv`
+
+`source venv/bin/activate`
+
+`pip install -r requirements.txt`
 
 
 ### 3. Training Steps
