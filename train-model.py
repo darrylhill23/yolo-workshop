@@ -9,12 +9,13 @@ model = YOLO("yolov8n.pt")  # or yolov8s.pt, yolov8m.pt, etc.
 model.train(
     data="data.yaml",
     # if using cpu, this will take a long time. You can reduce the number of epochs to speed up training, but it may affect accuracy.
-    epochs=50,
-    imgsz=640,
+    epochs=150,
+    imgsz=256,
     batch=16,
     device="cpu",   # GPU 0 (use "cpu" if no GPU)
     workers=4,
     patience=0,
     project=str(Path.cwd() / "runs" / "train"),
-    name="exp"
+    name="exp",
+    exist_ok=True
 )
