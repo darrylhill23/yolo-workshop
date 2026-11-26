@@ -18,7 +18,7 @@ Navigate to the yolo-workshop folder.
 
 `python -m venv venv`
 
-`.\venv\Scripts\Activate.ps1`
+`cmd /k venv\Scripts\activate.bat`
 
 `pip install -r requirements.txt`
 
