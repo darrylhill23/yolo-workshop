@@ -13,11 +13,17 @@ echo Installing remaining dependencies...
 venv\Scripts\python.exe -m pip install -r requirements.txt
 if errorlevel 1 goto failed
 
+echo Verifying installation...
+venv\Scripts\python.exe -c "import torch, cv2, ultralytics; print('All packages imported successfully!')"
+if errorlevel 1 goto failed
+
 echo Installation complete!
-pause
+call venv\Scripts\activate.bat
+echo You are now ready to begin the workshop.
+cmd /k
 exit /b 0
 
 :failed
 echo Installation failed. Please contact your instructor.
-pause
+cmd /k
 exit /b 1
