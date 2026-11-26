@@ -14,7 +14,7 @@ venv\Scripts\python.exe -m pip install -r requirements.txt
 if errorlevel 1 goto failed
 
 echo Verifying installation...
-venv\Scripts\python.exe -c "import torch, cv2, ultralytics; print('All packages imported successfully!')"
+venv\Scripts\python.exe -c "import torch, cv2, mediapipe, ultralytics; print('All packages imported successfully!')"
 if errorlevel 1 goto failed
 
 echo Installation complete!
