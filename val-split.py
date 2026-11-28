@@ -8,8 +8,22 @@ lbl_dir = "dataset/labels/train"
 out_img_val = "dataset/images/val"
 out_lbl_val = "dataset/labels/val"
 
+os.makedirs(img_dir, exist_ok=True)
+os.makedirs(lbl_dir, exist_ok=True)
 os.makedirs(out_img_val, exist_ok=True)
 os.makedirs(out_lbl_val, exist_ok=True)
+
+# Move existing validation data back into training
+for src_dir, dst_dir in [
+    (out_img_val, img_dir),
+    (out_lbl_val, lbl_dir)
+]:
+    for f in os.listdir(src_dir):
+        src = os.path.join(src_dir, f)
+        dst = os.path.join(dst_dir, f)
+
+        if os.path.isfile(src):
+            shutil.move(src, dst)
 
 images = [f for f in os.listdir(img_dir) if f.endswith(".png")]
 
