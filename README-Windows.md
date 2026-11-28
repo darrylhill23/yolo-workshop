@@ -4,8 +4,6 @@ We are going to train a YOLO model.
 
 ## Installation
 
-### 1. Download the ZIP file
-
 Go to 
 
 `https://github.com/darrylhill23/yolo-workshop`
@@ -14,22 +12,28 @@ Click Code → Download ZIP.
 
 Extract the ZIP file.
 
-Double-click setup.bat.
+Double-click setup.bat. This will take a while to download the necessary Python libraries. Once it is down, it should give you a message and the terminal should remain open. This is where you will type your commands.
 
 
 
 
-### 3. Training Steps
+## Training Your Model
 
-1. Find something distinctive you want to track. It should have a distinctive pattern and/or colour. Record a video showing it in various places at various angles using
+### Record Your Object
+
+Find something distinctive you want to track. It should have a distinctive pattern and/or colour. Run the command:
 
 `python record.py`
 
-Press escape when done. Aim for about 40 seconds to a minute.
+The webcam should turn on and begin recording you. Show the object in various poses, and record some short segments where the object is not visible. Aim for about 40 seconds to a minute (much longer and you will have a lot of images to label). Press escape when done. If you are happy with the recording, proceed to the next step. Otherwise run `python record.py` again.
 
-2. Chop it into frames.
+### Chop Your Recording into Frames
 
-Run `python extract-frames.py`. This will extract frames at 1 second intervals and put them into a **candidates** folder.
+Type the command
+
+`python extract-frames.py`. 
+
+This will extract frames from your video at 1 second intervals and put them into a **candidates** folder.
 
 3. Label this training data. Run
 
