@@ -49,9 +49,13 @@ for fname in os.listdir(img_dir):
         key = cv2.waitKey(1)
 
         # negative sample
-        if key == ord('n'):
+        if key == 13 and not box:  # ENTER
             label_lines = ""
             break
+
+        # if they press delete or backspace, clear the box
+        if key in [8, 127]:  # BACKSPACE or DELETE
+            box = None
 
         # positive sample
         if key == 13 and box:  # ENTER
